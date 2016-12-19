@@ -4,37 +4,14 @@ class Header extends React.Component {
     super(props);
 
     this.state = {
-      hiddenLogin: true,
-      hiddenRegister: true,
-      message: "",
-      loggedIn: false,
-      eMail: "",
-      user: ""
+      message: ""
     }
 
-    this.clickRegister = this.clickRegister.bind(this)
-    this.clickLogin = this.clickLogin.bind(this)
     this.handleRegister = this.handleRegister.bind(this)
     this.handleLogin = this.handleLogin.bind(this)
     this.handleLogout = this.handleLogout.bind(this)
 
   }
-
-
-  clickRegister(){
-    this.setState({hiddenRegister: false})
-    if (this.state.hiddenLogin === false) {
-      $(".login-form").hide()
-    }
-  }
-
-  clickLogin(){
-    this.setState({hiddenLogin: false})
-    if (this.state.hiddenRegister === false) {
-      $(".register-form").hide()
-    }
-  }
-
 
   handleRegister(data){
     alert(data.message)
@@ -43,13 +20,7 @@ class Header extends React.Component {
   }
 
   handleLogin(data){
-    if (!data.name) {
-      // this.setState({message: data.message})
-      alert(data.message)
-    }else {
-      this.setState({user: data, loggedIn: true})
-
-      }
+    this.props.handleLogin(data)
   }
 
   handleLogout(response){
@@ -60,19 +31,18 @@ class Header extends React.Component {
     }
   }
 
-
   render(){
-    if (!this.state.loggedIn) {
+    if (!this.props.loggedIn) {
     return(
       <div>
         <ul>
-          <li className="register-button" onClick={this.clickRegister}>
+          <li className="register-button">
             <Register
-            handleRegister={this.handleRegister} />
+            handleRegister={this.handleRegister}
+            hiddenRegister={this.state.hiddenRegister}/>
           </li>
-          <li className="login-button" onClick={this.clickLogin}>
+          <li className="login-button">
             <Login
-            eMail={this.state.eMail}
             handleLogin={this.handleLogin}/>
           </li>
         </ul>
@@ -83,7 +53,7 @@ class Header extends React.Component {
       <div>
       <ul>
         <li>
-          <h3>{this.state.user.name}</h3>
+          <h3>{this.props.user.name}</h3>
         </li>
         <li>
           <Logout
