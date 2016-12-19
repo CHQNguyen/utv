@@ -68,7 +68,7 @@ class Register extends React.Component {
   render () {
     return (
       <div className="register">
-      <h3 onClick={this.handleClick}>Register</h3>
+      <button className="btn btn-danger" onClick={this.handleClick}>Register</button>
       <form className="register-form">
         <table>
           <tbody>

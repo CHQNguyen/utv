@@ -5,6 +5,7 @@ class Body extends React.Component {
       <div>
         <h1>Body</h1>
         <SimpleSlider />
+
       </div>)
   }
 }

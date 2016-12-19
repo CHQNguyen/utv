@@ -56,7 +56,7 @@ class Login extends React.Component {
   render(){
     return(
       <div className="login">
-      <h3 onClick={this.handleClick}>Login</h3>
+      <button className="btn btn-danger" onClick={this.handleClick}>Login</button>
       <form className="login-form">
         <table>
           <tbody>
