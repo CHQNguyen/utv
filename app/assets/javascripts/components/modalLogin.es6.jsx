@@ -22,7 +22,7 @@ class ModalLogin extends React.Component {
     var Button = ReactBootstrap.Button;
     return (
       <div>
-      <Button className="login-button"onClick={this.open} bsStyle="primary">Login</Button>
+      <Button className="login-button" onClick={this.open} bsStyle="primary">Login</Button>
       <Modal show={this.state.showModal} onHide={this.close}>
         <Modal.Header closeButton>
           <Modal.Title>Login</Modal.Title>

@@ -1,3 +1,24 @@
+const slickerStyle = {
+  width: "20em"
+};
+
+const Card = (props) => {
+  return (
+    <div className="category-container">
+      <div className="category-image">
+        <img className="center-block"
+          onClick={props.onClick}
+          id={props.id}
+          style={slickerStyle}
+          src={props.image}/>
+      </div>
+      <h4 className="category_title center">
+        {props.children}
+      </h4>
+    </div>
+  )
+}
+
 class SimpleSlider extends React.Component {
 
   constructor(props) {
@@ -13,10 +34,6 @@ class SimpleSlider extends React.Component {
   }
 
   render() {
-    const slickerStyle = {
-      width: "20em"
-    };
-
     // Variable Width
     var settings = {
       infinite: true,
@@ -33,7 +50,7 @@ class SimpleSlider extends React.Component {
           </div>
           <div className="categories-container">
               <div className="blah">
-                <div className="category-container"><div className="category-image"><img className="center-block" onClick={this.props.handleClick} id="1" style={slickerStyle} src="comedy.png"/></div><h4 className="category_title center">Comedy Network</h4></div>
+                <Card onClick={this.props.handleClick} id="1" image="comedy.png">Comedy Network</Card>
                 <div className="category-container"><div className="category-image"><img className="center-block" onClick={this.props.handleClick} id="2" style={slickerStyle} src="education.png"/></div><h4 className="category_title center">Educational & Informative</h4></div>
                 <div className="category-container"><div className="category-image"><img className="center-block" onClick={this.props.handleClick} id="3" style={slickerStyle} src="kids.png"/></div><h4 className="category_title center">Kids Discovery</h4></div>
               </div>

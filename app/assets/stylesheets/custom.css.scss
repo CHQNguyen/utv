@@ -98,16 +98,17 @@ body > main > div > div > div:nth-child(1) > nav > div > div:nth-child(1) > butt
   text-transform: uppercase;
   border: none;
 }
+
 body > main > div > div > div.landingpage > div > div.wrapper > div:nth-child(2) > div > button {
-  background-image: none;
-  background-color: #e50914;
-  font-family: Arial,sans-serif;
-  padding: 12px 2em;
-  min-width: 112px;
-  min-height: 44px;
-  font-weight: 700;
-  letter-spacing: 1.9px;
-  text-transform: uppercase;
+  background-image: none !important;
+  background-color: #e50914 !important;
+  font-family: Arial,sans-serif !important;
+  padding: 12px 2em !important;
+  min-width: 112px !important;
+  min-height: 44px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.9px !important;
+  text-transform: uppercase !important;
 }
 
 .logo {
