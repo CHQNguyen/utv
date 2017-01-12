@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+uTV is a web app designed to personalize your youtube experience.  It pulls from several prominant YouTube channels and based on your preferences provides you with content you want to see without all the stuff you don't. Enjoy!
 
-Things you may want to cover:
+* Ruby version - 2.3.1
 
-* Ruby version
+* Rails version - 5.0.0.1
 
-* System dependencies
+* Dependancies - We have several dependancies, all of which are covered with bundler: "gem install bundler"
 
-* Configuration
+* Configuration - Download files and run "bundle install"
 
-* Database creation
+* Database creation & initialization - After bundle install, run the following rake commands: rake db:create db:migrate db:seed
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+uTV utilizes a Ruby on Rails backend with a React.js front end styled with CSS, SCSS, and Bootstrap.  uTV leverages the power of YouTube's api to deliver you fresh top quality content.
